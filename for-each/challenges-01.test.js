@@ -9,11 +9,11 @@ Then, write a function named speaker that takes in a string and a callback funct
 ------------------------------------------------------------------------------------------------ */
 
 const greeting = (word) => {
-  // Solution code here...
+  return word.toUpperCase();
 };
 
 const speaker = (message, callback) => {
-  // Solution code here...
+  return callback(message);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -33,11 +33,14 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-  // Solution code here...
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
+  for (let i = 0; i < times; i++) {
+    callback(arr, num);
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -59,7 +62,14 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  // Solution code here...
+  var list = [];
+  availableItems.forEach(item => {
+    if (item.available === true) {
+      list.push(item.name);
+    }
+
+  });
+  return list;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -77,7 +87,29 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  var list = [];
+  arr.forEach(item => {
+    if (item % 3 === 0 && item % 5 === 0) {
+      list.push('Fizz Buzz');
+    }
+
+    else if (item % 3 === 0) {
+      list.push('Fizz');
+    }
+
+    else if (item % 5 === 0) {
+      list.push('Buzz');
+
+    }
+
+
+    // if (item % 3 != 0 && item % 5 != 0) {
+      else{
+      list.push(item);
+    }
+
+  })
+  return list;
 };
 
 /* ------------------------------------------------------------------------------------------------
